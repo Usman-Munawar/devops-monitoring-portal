@@ -15,8 +15,12 @@ dashboards, and (in progress) log aggregation.
 
 ## What it monitors
 
-- Application-level: NGINX request rate (via stub_status + exporter)
-- Host-level: CPU usage %, memory usage % (via Node Exporter)
+- **Application-level:** NGINX request rate (via stub_status + exporter)
+- **Host-level:** CPU usage %, memory usage % (via Node Exporter) — these
+  reflect the *entire host machine*, not any single container's usage.
+  Per-container resource metrics (e.g. "how much CPU is just the NGINX
+  container using") would require an additional exporter like cAdvisor,
+  noted under Status below as a planned next step.
 
 ## Architecture
 
